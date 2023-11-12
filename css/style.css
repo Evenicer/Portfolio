@@ -2,34 +2,35 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0e6; /* White background */
+    background-color: #f0f0f0e6; /* Fondo blanco */
 }
 
 .container {
     display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: flex-start; /* Align items to the start (top) */
-    height: 100vh; /* Make the container take the full viewport height */
-    overflow: hidden; /* Hide content overflowing from the container */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    height: 100vh; /* Toma la altura completa del viewport */
+    overflow: hidden; /* Oculta el contenido que desborda del contenedor */
 }
 
-/*Side Bar*/
+/* Sidebar */
 
 .sidebar {
     border-radius: 25px;
-    width: 220px; /* Adjust the width as needed */
+    width: 220px; /* Ajusta el ancho según sea necesario */
     height: 60vh;
-    background-color: rgb(55, 81, 212); /* Sidebar background color */
-    color: #fff; /* Text color */
+    background-color: rgb(55, 81, 212); /* Color de fondo del sidebar */
+    color: #fff; /* Color del texto */
     padding: 20px;
-    margin: 100px 900px 0 0; /* Add margin to the right */
-    position: fixed; /* Fix the sidebar */
-    overflow-y: auto; /* Enable vertical scroll for the sidebar */
+    margin: 100px 900px 0 0; /* Agrega margen a la derecha */
+    position: fixed; /* Fija el sidebar */
+    overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
 }
+
 
 .sidebar img {
     width: 50%;
-    border-radius: 50%; /* Make the image circular if it's a profile picture */
+    border-radius: 50%; /* Hace la imagen circular si es una foto de perfil */
     margin-bottom: 20px;
 }
 
@@ -54,41 +55,44 @@ body {
 }
 
 .sidebar .footer-text {
-    position: absolute;
+    /*position: absolute;
     bottom: 10px; /* Ajusta según sea necesario para la posición vertical */
     font-size: 12px; /* Tamaño de letra más pequeño */
     color: #ffffff; /* Color de texto gris, ajusta según sea necesario */
     text-align: center;
+    padding-top: 15%;
 }
 
-/*About Me*/
+/* About Me */
 
 .content {
     border-radius: 25px;
-    width: calc(100% - 280px); /* Adjust the width as needed */
-    max-width: 800px; /* Set a maximum width if desired */
-    height: 20vh;
-    flex: 1;
+    width: calc(100% - 280px); /* Ajusta el ancho según sea necesario */
+    max-width: 800px; /* Establece un ancho máximo si es deseado */
+    height: 25vh;
+    /*position:fixed; /* Fija el sidebar */
+    block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
+    /*overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
     padding: 20px;
-    margin: 100px 20px 0 260px; /* Add margin to the left to accommodate the fixed sidebar */
-    background-color: #fff; /* White background */
+    margin: 100px 20px 0 260px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
+    background-color: #fff; /* Fondo blanco */
 }
 
 .content .separator-line {
-    border: 2px solid rgb(227, 79, 79); /* A border for the line */
-    margin: 1px 0; /* Adjust the margin as needed */
+    border: 2px solid rgb(227, 79, 79); /* Un borde para la línea */
+    margin: 1px 0; /* Ajusta el margen según sea necesario */
     width: 35px;
 }
 
 .content h1 {
     font-size: 1.5em;
-    text-align: left; /* Center the heading text */
+    text-align: left; /* Centra el texto del encabezado */
 }
 
 .content p {
     font-size: 1.1em;
-    color: #555; /* Adjust text color as needed */
-    text-align: left; /* Center the paragraph text */
+    color: #555; /* Ajusta el color del texto según sea necesario */
+    text-align: left; /* Centra el texto del párrafo */
 }
 
 .content .info-columns {
@@ -100,19 +104,19 @@ body {
 }
 
 .content .info-item {
-    margin-bottom: 8px; /* Adjust the margin as needed */
+    margin-bottom: 8px; /* Ajusta el margen según sea necesario */
     display: flex;
     align-items: center;
 }
 
 .content .info-item span {
     font-weight: bold;
-    margin-right: 8px; /* Adjust the margin as needed */
+    margin-right: 8px; /* Ajusta el margen según sea necesario */
 }
 
 .content .rounded-button {
     display: inline-block;
-    width: 150px; /* Set an exact width for the button */
+    width: 150px; /* Establece un ancho exacto para el botón */
     padding: 10px;
     border-radius: 25px;
     background-color: rgb(227, 79, 79);
@@ -126,5 +130,52 @@ body {
 }
 
 .content .rounded-button:hover {
-    background-color: rgb(55, 81, 212); /* Darker green color on hover, you can change this */
+    background-color: rgb(55, 81, 212); /* Color verde más oscuro al pasar el cursor, puedes cambiar esto */
 }
+
+/* Añade una consulta de medios para anchos de ventana pequeños */
+@media (max-width: 1160px) {
+    .container {
+        flex-direction: column; /* Cambia la dirección del contenedor a columna en pantallas pequeñas */
+    }
+
+    .sidebar {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+        height: auto; /* Altura automática en pantallas pequeñas */
+        margin: 0; /* Elimina el margen en pantallas pequeñas */
+        position: static; /* Elimina la posición fija en pantallas pequeñas */
+    }
+
+    .sidebar img {
+        display: none; /* Oculta la imagen en pantallas pequeñas */
+    }
+
+    .sidebar nav ul {
+        display: flex; /* Muestra los elementos en línea (horizontal) */
+        flex-direction: row; /* Alinea los elementos en una fila */
+        justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
+        margin: 20px 0 0 0; /* Ajusta el margen según sea necesario */
+    }
+
+    .sidebar nav a {
+        padding: 10px; /* Ajusta el relleno de los enlaces */
+    }
+
+    .sidebar .footer-text {
+        display: none;
+    }
+
+    .content {
+        width: 100%; /* Ancho completo en anchos de ventana muy pequeños */
+        max-width: 100%; /* Establece el ancho máximo al 100% del ancho de la ventana */
+        margin: 20px 0; /* Agrega margen solo arriba y abajo */
+        flex: 1;
+    }
+
+    .content .info-columns {
+        display:list-item;
+    }
+
+
+}
+

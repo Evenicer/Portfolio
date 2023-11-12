@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #fff; /* White background */
+    background-color: #f0f0f0e6; /* White background */
 }
 
 .container {
@@ -47,18 +47,67 @@ body {
 }
 
 .content {
+    border-radius: 25px;
+    width: calc(100% - 280px); /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width if desired */
+    height: 20vh;
     flex: 1;
     padding: 20px;
-    margin: 100px 0 0 260px; /* Add margin to the left to accommodate the fixed sidebar */
+    margin: 100px 20px 0 260px; /* Add margin to the left to accommodate the fixed sidebar */
+    background-color: #fff; /* White background */
+}
+
+.content .separator-line {
+    border: 2px solid rgb(227, 79, 79); /* A border for the line */
+    margin: 1px 0; /* Adjust the margin as needed */
+    width: 35px;
 }
 
 .content h1 {
-    font-size: 2em;
-    text-align: center; /* Center the heading text */
+    font-size: 1.5em;
+    text-align: left; /* Center the heading text */
 }
 
 .content p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #555; /* Adjust text color as needed */
-    text-align: center; /* Center the paragraph text */
+    text-align: left; /* Center the paragraph text */
+}
+
+.content .info-columns {
+    display: flex;
+}
+
+.content .info-group {
+    flex: 1;
+}
+
+.content .info-item {
+    margin-bottom: 8px; /* Adjust the margin as needed */
+    display: flex;
+    align-items: center;
+}
+
+.content .info-item span {
+    font-weight: bold;
+    margin-right: 8px; /* Adjust the margin as needed */
+}
+
+.content .rounded-button {
+    display: inline-block;
+    width: 150px; /* Set an exact width for the button */
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgb(227, 79, 79);
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: #fff;
+}
+
+.content .rounded-button:hover {
+    background-color: #1d71de; /* Darker green color on hover, you can change this */
 }

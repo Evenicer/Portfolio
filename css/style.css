@@ -7,12 +7,14 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     height: 100vh; /* Toma la altura completa del viewport */
     overflow: hidden; /* Oculta el contenido que desborda del contenedor */
     overflow-y: auto;
 }
+
 
 /* Sidebar */
 
@@ -23,9 +25,10 @@ body {
     background-color: rgb(55, 81, 212); /* Color de fondo del sidebar */
     color: #fff; /* Color del texto */
     padding: 20px;
-    margin: 100px 900px 0 0; /* Agrega margen a la derecha */
+    margin: -200px 0 0 100px; /* Agrega margen a la derecha */
     position: fixed; /* Fija el sidebar */
     overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
+    flex-shrink: 0;
 }
 
 
@@ -70,14 +73,13 @@ body {
     border-radius: 25px;
     width: 800px; /* Ajusta el ancho según sea necesario */
     /*max-width: 800px; /* Establece un ancho máximo si es deseado */
-    height: 25vh;
+    height: auto;
     /*position:fixed; /* Fija el sidebar */
-    block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
+    /*block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
     /*overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
     padding: 20px;
-    margin: 100px 0 0 260px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
+    margin: 130px 0 0 400px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
     background-color: #fff; /* Fondo blanco */
-    position: fixed;
 }
 
 .separator-line {
@@ -135,78 +137,88 @@ body {
     background-color: rgb(55, 81, 212); /* Color verde más oscuro al pasar el cursor, puedes cambiar esto */
 }
 
+/* Experience */
 
 /* Experience */
 .experience-div {
     border-radius: 25px;
-    width: 800px; /* Ajusta el ancho según sea necesario */
-    height: 25vh;
+    width: 800px;
+    height: auto;
     padding: 20px;
-    background-color: #fff; /* Fondo blanco */
-    margin: 400px 0 0 260px;
+    margin: 50px 0 0 400px;
+    background-color: #fff; 
 }
 
 .experience-div h1 {
     font-size: 1.5em;
-    text-align: left;
+    text-align: left; /* Centra el texto del encabezado */
 }
 
 .experience-div p {
     font-size: 1.1em;
-    color: #555;
-    text-align: left;
+    color: #555; /* Ajusta el color del texto según sea necesario */
+    text-align: left; /* Centra el texto del párrafo */
 }
 
-.experience-div .info-columns {
-    display: flex;
-}
+.timeline {
+    position: relative;
+    margin: 40px 0;
+    padding-left: 40px;
+  }
 
-.experience-div .info-group {
-    flex: 1;
-}
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+  }
 
-.experience-div .info-item {
+  .timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -26px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #3498db;
+    transform: translateY(-50%);
+  }
+
+  .timeline-item .date {
     margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-}
-
-.experience-div .info-item span {
     font-weight: bold;
-    margin-right: 8px;
-}
+  }
 
-.experience-div .rounded-button {
-    display: inline-block;
-    width: 150px;
-    padding: 10px;
-    border-radius: 25px;
-    background-color: rgb(227, 79, 79);
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border: #fff;
-}
+  .timeline-item .title {
+    font-weight: bold;
+  }
 
-.experience-div .rounded-button:hover {
-    background-color: rgb(55, 81, 212);
-}
+  .timeline-item .description {
+    margin-top: 8px;
+  }
 
-
-/* Añade una consulta de medios para anchos de ventana pequeños */
-@media (max-width: 1160px) {
+  @media (max-width: 1160px) {
     .container {
         flex-direction: column; /* Cambia la dirección del contenedor a columna en pantallas pequeñas */
     }
 
     .sidebar {
+        order: -1; /* Mueve el sidebar a la parte superior */
         width: 100%; /* Ancho completo en pantallas pequeñas */
-        height: auto; /* Altura automática en pantallas pequeñas */
+        height: 280px;  /* Altura automática en pantallas pequeñas */
         margin: 0; /* Elimina el margen en pantallas pequeñas */
-        position: static; /* Elimina la posición fija en pantallas pequeñas */
+        position: sticky; /* Hace que el sidebar se "pegue" a la parte superior de la pantalla */
+        top: 0; /* Alinea el sidebar en la parte superior */
+        border-radius: 0; /* Elimina el borde redondeado para apariencia de ancho completo */
     }
 
     .sidebar img {
@@ -241,13 +253,11 @@ body {
     }
 
     .experience-div {
-        width: 100%; /* Ancho completo en anchos de ventana muy pequeños */
-        max-width: 100%; /* Establece el ancho máximo al 100% del ancho de la ventana */
-        margin: 40px 0; /* Agrega margen solo arriba y abajo */
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0;
         flex: 1;
-    }
-
-    .experience-div .info-columns {
-        display: list-item;
+        position:relative;
     }
 }
+

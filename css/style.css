@@ -173,7 +173,7 @@ body {
     left: 20px;
     width: 2px;
     height: 100%;
-    background-color: #ccc;
+    background-color: #ccc;;
   }
 
   .timeline-item {
@@ -185,11 +185,11 @@ body {
     content: '';
     position: absolute;
     top: 50%;
-    left: -26px;
+    left: -27px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #3498db;
+    background-color: #5797a4;
     transform: translateY(-50%);
   }
 

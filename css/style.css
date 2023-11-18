@@ -11,6 +11,7 @@ body {
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     height: 100vh; /* Toma la altura completa del viewport */
     overflow: hidden; /* Oculta el contenido que desborda del contenedor */
+    overflow-y: auto;
 }
 
 /* Sidebar */
@@ -67,18 +68,19 @@ body {
 
 .content {
     border-radius: 25px;
-    width: calc(100% - 280px); /* Ajusta el ancho según sea necesario */
-    max-width: 800px; /* Establece un ancho máximo si es deseado */
+    width: 800px; /* Ajusta el ancho según sea necesario */
+    /*max-width: 800px; /* Establece un ancho máximo si es deseado */
     height: 25vh;
     /*position:fixed; /* Fija el sidebar */
     block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
     /*overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
     padding: 20px;
-    margin: 100px 20px 0 260px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
+    margin: 100px 0 0 260px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
     background-color: #fff; /* Fondo blanco */
+    position: fixed;
 }
 
-.content .separator-line {
+.separator-line {
     border: 2px solid rgb(227, 79, 79); /* Un borde para la línea */
     margin: 1px 0; /* Ajusta el margen según sea necesario */
     width: 35px;
@@ -133,6 +135,67 @@ body {
     background-color: rgb(55, 81, 212); /* Color verde más oscuro al pasar el cursor, puedes cambiar esto */
 }
 
+
+/* Experience */
+.experience-div {
+    border-radius: 25px;
+    width: 800px; /* Ajusta el ancho según sea necesario */
+    height: 25vh;
+    padding: 20px;
+    background-color: #fff; /* Fondo blanco */
+    margin: 400px 0 0 260px;
+}
+
+.experience-div h1 {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.experience-div p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+.experience-div .info-columns {
+    display: flex;
+}
+
+.experience-div .info-group {
+    flex: 1;
+}
+
+.experience-div .info-item {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.experience-div .info-item span {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.experience-div .rounded-button {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: rgb(227, 79, 79);
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: #fff;
+}
+
+.experience-div .rounded-button:hover {
+    background-color: rgb(55, 81, 212);
+}
+
+
 /* Añade una consulta de medios para anchos de ventana pequeños */
 @media (max-width: 1160px) {
     .container {
@@ -170,12 +233,21 @@ body {
         max-width: 100%; /* Establece el ancho máximo al 100% del ancho de la ventana */
         margin: 20px 0; /* Agrega margen solo arriba y abajo */
         flex: 1;
+        position:relative;
     }
 
     .content .info-columns {
-        display:list-item;
+        display: list-item;
     }
 
+    .experience-div {
+        width: 100%; /* Ancho completo en anchos de ventana muy pequeños */
+        max-width: 100%; /* Establece el ancho máximo al 100% del ancho de la ventana */
+        margin: 40px 0; /* Agrega margen solo arriba y abajo */
+        flex: 1;
+    }
 
+    .experience-div .info-columns {
+        display: list-item;
+    }
 }
-

@@ -212,13 +212,14 @@ body {
     }
 
     .sidebar {
-        order: -1; /* Mueve el sidebar a la parte superior */
+        /*order: -1; /* Mueve el sidebar a la parte superior */
         width: 100%; /* Ancho completo en pantallas pequeñas */
-        height: 280px;  /* Altura automática en pantallas pequeñas */
-        margin: 0; /* Elimina el margen en pantallas pequeñas */
+        height: auto;  /* Altura automática en pantallas pequeñas */
+        margin: 200px 0; /* Elimina el margen en pantallas pequeñas */
         position: sticky; /* Hace que el sidebar se "pegue" a la parte superior de la pantalla */
         top: 0; /* Alinea el sidebar en la parte superior */
         border-radius: 0; /* Elimina el borde redondeado para apariencia de ancho completo */
+        z-index: 1;
     }
 
     .sidebar img {
@@ -241,8 +242,7 @@ body {
     }
 
     .content {
-        width: 100%; /* Ancho completo en anchos de ventana muy pequeños */
-        max-width: 100%; /* Establece el ancho máximo al 100% del ancho de la ventana */
+        width: auto; /* Ancho completo en anchos de ventana muy pequeños */
         margin: 20px 0; /* Agrega margen solo arriba y abajo */
         flex: 1;
         position:relative;
@@ -253,8 +253,7 @@ body {
     }
 
     .experience-div {
-        width: 100%;
-        max-width: 100%;
+        width: auto;
         margin: 0 0;
         flex: 1;
         position:relative;

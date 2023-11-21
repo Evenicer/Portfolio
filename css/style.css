@@ -78,7 +78,7 @@ body {
     /*block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
     /*overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
     padding: 20px;
-    margin: 130px 0 0 400px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
+    margin: 900px 0 0 400px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
     background-color: #fff; /* Fondo blanco */
 }
 
@@ -206,6 +206,53 @@ body {
     margin-top: 8px;
   }
 
+
+  /* Proyectos */
+  .projects {
+    border-radius: 25px;
+    width: 800px;
+    height: auto;
+    padding: 20px;
+    margin: 20px 0 0 400px;
+    background-color: #fff;
+}
+
+.projects h1 {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.projects p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+
+.project-item {
+    margin-bottom: 20px;
+}
+
+.project-item h2 {
+    font-size: 1.2em;
+}
+
+.project-item img {
+    width: 50%; /* Tamaño de la imagen, ajusta según sea necesario */
+    border-radius: 10px; /* Bordes redondeados para un aspecto más suave */
+    margin-top: 10px; /* Margen superior, ajusta según sea necesario */
+    display: block; /* Para centrar la imagen */
+    margin-left: auto; /* Para centrar la imagen */
+    margin-right: auto; /* Para centrar la imagen */
+}
+
+.project-item p {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+  
   @media (max-width: 1160px) {
     .container {
         flex-direction: column; /* Cambia la dirección del contenedor a columna en pantallas pequeñas */
@@ -215,7 +262,7 @@ body {
         /*order: -1; /* Mueve el sidebar a la parte superior */
         width: 100%; /* Ancho completo en pantallas pequeñas */
         height: auto;  /* Altura automática en pantallas pequeñas */
-        margin: 200px 0; /* Elimina el margen en pantallas pequeñas */
+        margin: 600px 0; /* Elimina el margen en pantallas pequeñas */
         position: sticky; /* Hace que el sidebar se "pegue" a la parte superior de la pantalla */
         top: 0; /* Alinea el sidebar en la parte superior */
         border-radius: 0; /* Elimina el borde redondeado para apariencia de ancho completo */
@@ -257,6 +304,13 @@ body {
         margin: 0 0;
         flex: 1;
         position:relative;
+    }
+
+    .projects {
+        width: auto;
+        margin: 0 0;
+        flex: 1;
+        position: relative;
     }
 }
 

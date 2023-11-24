@@ -10,38 +10,35 @@ body {
     flex-direction: column;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
-    height: 100vh; /* Toma la altura completa del viewport */
+    min-height: 100vh; /* Toma la altura completa del viewport */
     overflow: hidden; /* Oculta el contenido que desborda del contenedor */
-    overflow-y: auto;
 }
 
-
 /* Sidebar */
-
 .sidebar {
     border-radius: 25px;
-    width: 220px; /* Ajusta el ancho según sea necesario */
+    width: 220px;
     height: 60vh;
-    background-color: rgb(55, 81, 212); /* Color de fondo del sidebar */
-    color: #fff; /* Color del texto */
+    background-color: rgb(55, 81, 212);
+    color: #fff;
     padding: 20px;
-    margin: -200px 0 0 100px; /* Agrega margen a la derecha */
-    position: fixed; /* Fija el sidebar */
-    overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
+    margin: 80px 0 0 100px; /* Ajusta el margen */
+    position: fixed; /* Hace que el sidebar se "pegue" al hacer scroll */
+    top: 0;
+    overflow-y: auto;
     flex-shrink: 0;
 }
 
-
 .sidebar img {
     width: 50%;
-    border-radius: 50%; /* Hace la imagen circular si es una foto de perfil */
+    border-radius: 50%;
     margin-bottom: 20px;
 }
 
 .sidebar nav ul {
     list-style: none;
     padding: 0;
-    margin: 40px 0 0 0; /* Ajusta el margen superior según sea necesario */
+    margin: 40px 0 0 0;
 }
 
 .sidebar nav a {
@@ -51,52 +48,47 @@ body {
     display: block;
     padding: 10px 0;
     text-align: left;
-    transition: transform 0.3s ease; /* Agrega una transición de transformación de 0.3 segundos */
+    transition: transform 0.3s ease;
 }
 
 .sidebar nav a:hover {
-    transform: translateX(10px); /* Desplaza el enlace 10px hacia la derecha al pasar el cursor */
+    transform: translateX(10px);
 }
 
 .sidebar .footer-text {
-    /*position: absolute;
-    bottom: 10px; /* Ajusta según sea necesario para la posición vertical */
-    font-size: 12px; /* Tamaño de letra más pequeño */
-    color: #ffffff; /* Color de texto gris, ajusta según sea necesario */
+    font-size: 12px;
+    color: #ffffff;
     text-align: center;
     padding-top: 15%;
 }
 
-/* About Me */
-
+/* Content */
 .content {
     border-radius: 25px;
-    width: 800px; /* Ajusta el ancho según sea necesario */
-    /*max-width: 800px; /* Establece un ancho máximo si es deseado */
+    width: 60vw;
     height: auto;
-    /*position:fixed; /* Fija el sidebar */
-    /*block-size: auto; /*Se bloquea el div para que no se mueva al hacer pequeña la ventana*/
-    /*overflow-y: auto; /* Habilita el desplazamiento vertical para el sidebar */
     padding: 20px;
-    margin: 900px 0 0 400px; /* Agrega margen a la izquierda para acomodar el sidebar fijo */
-    background-color: #fff; /* Fondo blanco */
+    margin: 0 0 0 400px; /* Ajusta el margen */
+    background-color: #fff;
+    position: relative; /* Añade esta propiedad */
+    top: 10vh; /* Ajusta el valor para que coincida con la altura del sidebar */
 }
 
 .separator-line {
-    border: 2px solid rgb(227, 79, 79); /* Un borde para la línea */
-    margin: 1px 0; /* Ajusta el margen según sea necesario */
+    border: 2px solid rgb(227, 79, 79);
+    margin: 1px 0;
     width: 35px;
 }
 
 .content h1 {
     font-size: 1.5em;
-    text-align: left; /* Centra el texto del encabezado */
+    text-align: left;
 }
 
 .content p {
     font-size: 1.1em;
-    color: #555; /* Ajusta el color del texto según sea necesario */
-    text-align: left; /* Centra el texto del párrafo */
+    color: #555;
+    text-align: left;
 }
 
 .content .info-columns {
@@ -108,19 +100,19 @@ body {
 }
 
 .content .info-item {
-    margin-bottom: 8px; /* Ajusta el margen según sea necesario */
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
 }
 
 .content .info-item span {
     font-weight: bold;
-    margin-right: 8px; /* Ajusta el margen según sea necesario */
+    margin-right: 8px;
 }
 
 .content .rounded-button {
     display: inline-block;
-    width: 150px; /* Establece un ancho exacto para el botón */
+    width: 150px;
     padding: 10px;
     border-radius: 25px;
     background-color: rgb(227, 79, 79);
@@ -134,54 +126,54 @@ body {
 }
 
 .content .rounded-button:hover {
-    background-color: rgb(55, 81, 212); /* Color verde más oscuro al pasar el cursor, puedes cambiar esto */
+    background-color: rgb(55, 81, 212);
 }
-
-/* Experience */
 
 /* Experience */
 .experience-div {
     border-radius: 25px;
-    width: 800px;
+    width: 60vw;
     height: auto;
     padding: 20px;
-    margin: 50px 0 0 400px;
-    background-color: #fff; 
+    margin: 20px 0 0 400px; /* Ajusta el margen */
+    background-color: #fff;
+    position: relative;
+    top: 10vh; /* Ajusta el valor para que coincida con la altura del sidebar */
 }
 
 .experience-div h1 {
     font-size: 1.5em;
-    text-align: left; /* Centra el texto del encabezado */
+    text-align: left;
 }
 
 .experience-div p {
     font-size: 1.1em;
-    color: #555; /* Ajusta el color del texto según sea necesario */
-    text-align: left; /* Centra el texto del párrafo */
+    color: #555;
+    text-align: left;
 }
 
 .timeline {
     position: relative;
     margin: 40px 0;
     padding-left: 40px;
-  }
+}
 
-  .timeline::before {
+.timeline::before {
     content: '';
     position: absolute;
     top: 0;
     left: 20px;
     width: 2px;
     height: 100%;
-    background-color: #ccc;;
-  }
+    background-color: #ccc;
+}
 
-  .timeline-item {
+.timeline-item {
     position: relative;
     margin-bottom: 40px;
-  }
+}
 
-  .timeline-item::before {
+.timeline-item::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -191,30 +183,31 @@ body {
     border-radius: 50%;
     background-color: #5797a4;
     transform: translateY(-50%);
-  }
+}
 
-  .timeline-item .date {
+.timeline-item .date {
     margin-bottom: 8px;
     font-weight: bold;
-  }
+}
 
-  .timeline-item .title {
+.timeline-item .title {
     font-weight: bold;
-  }
+}
 
-  .timeline-item .description {
+.timeline-item .description {
     margin-top: 8px;
-  }
+}
 
-
-  /* Proyectos */
-  .projects {
+/* Proyectos */
+.projects {
     border-radius: 25px;
-    width: 800px;
+    width: 60vw;
     height: auto;
     padding: 20px;
-    margin: 20px 0 0 400px;
+    margin: 100px 0 0 400px; /* Ajusta el margen */
     background-color: #fff;
+    position: relative;
+    /*top: 10vh; /* Ajusta el valor para que coincida con la altura del sidebar */
 }
 
 .projects h1 {
@@ -228,7 +221,6 @@ body {
     text-align: left;
 }
 
-
 .project-item {
     margin-bottom: 20px;
 }
@@ -238,12 +230,12 @@ body {
 }
 
 .project-item img {
-    width: 50%; /* Tamaño de la imagen, ajusta según sea necesario */
-    border-radius: 10px; /* Bordes redondeados para un aspecto más suave */
-    margin-top: 10px; /* Margen superior, ajusta según sea necesario */
-    display: block; /* Para centrar la imagen */
-    margin-left: auto; /* Para centrar la imagen */
-    margin-right: auto; /* Para centrar la imagen */
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .project-item p {
@@ -252,8 +244,7 @@ body {
     text-align: left;
 }
 
-  
-  @media (max-width: 1160px) {
+@media (max-width: 1100px) {
     .container {
         flex-direction: column; /* Cambia la dirección del contenedor a columna en pantallas pequeñas */
     }
@@ -262,7 +253,7 @@ body {
         /*order: -1; /* Mueve el sidebar a la parte superior */
         width: 100%; /* Ancho completo en pantallas pequeñas */
         height: auto;  /* Altura automática en pantallas pequeñas */
-        margin: 600px 0; /* Elimina el margen en pantallas pequeñas */
+        margin: 0 0 0 0; /* Elimina el margen en pantallas pequeñas */
         position: sticky; /* Hace que el sidebar se "pegue" a la parte superior de la pantalla */
         top: 0; /* Alinea el sidebar en la parte superior */
         border-radius: 0; /* Elimina el borde redondeado para apariencia de ancho completo */
@@ -277,7 +268,7 @@ body {
         display: flex; /* Muestra los elementos en línea (horizontal) */
         flex-direction: row; /* Alinea los elementos en una fila */
         justify-content: space-around; /* Distribuye el espacio alrededor de los elementos */
-        margin: 20px 0 0 0; /* Ajusta el margen según sea necesario */
+        margin: 0 0 0 0; /* Ajusta el margen según sea necesario */
     }
 
     .sidebar nav a {
@@ -289,10 +280,8 @@ body {
     }
 
     .content {
-        width: auto; /* Ancho completo en anchos de ventana muy pequeños */
-        margin: 20px 0; /* Agrega margen solo arriba y abajo */
-        flex: 1;
-        position:relative;
+        width: 100vw;/* Ancho completo en anchos de ventana muy pequeños */
+        margin: -60px 0; /* Agrega margen solo arriba y abajo */
     }
 
     .content .info-columns {
@@ -300,17 +289,13 @@ body {
     }
 
     .experience-div {
-        width: auto;
-        margin: 0 0;
-        flex: 1;
-        position:relative;
+        width: 100vw;
+        margin: 80px 0;
+       
     }
 
     .projects {
-        width: auto;
+        width: 100vw;
         margin: 0 0;
-        flex: 1;
-        position: relative;
     }
 }
-
